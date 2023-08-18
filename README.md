@@ -1,0 +1,1 @@
+# SkinsMoney-API-typescript
