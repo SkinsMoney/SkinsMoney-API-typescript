@@ -1,26 +1,60 @@
 {
     "name": "skinsmoney-typescript",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "API for SkinsMoney.gg",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "keywords": [
+        "skinsmoney",
+        "api",
+        "csgo",
+        "cs:go",
+        "cs2",
+        "counter-strike",
+        "skinsmoney-typescript",
+        "marketplace",
+        "trading-api",
+        "csgotrade",
+        "trade-bots"
+    ],
+    "homepage": "https://github.com/SkinsMoney/SkinsMoney-API-typescript",
+    "bugs": {
+        "url": "https://github.com/SkinsMoney/SkinsMoney-API-typescript/issues"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "files": [
-        "lib"
+        "dist"
     ],
     "scripts": {
-        "build": "tsc"
+        "ci": "npm run format && npm run lint && npm run build && npm run check-exports",
+        "build": "npx tsc --build",
+        "format": "npx @biomejs/biome format --write ./src",
+        "lint": "npx @biomejs/biome lint --write ./src",
+        "prepare": "husky",
+        "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+        "local-release": "changeset version && changeset publish",
+        "prepublishOnly": "npm run ci"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/SkinsMoney/SkinsMoney-API-typescript"
     },
-    "author": "SkinsMoney",
-    "license": "ISC",
+    "engines": {
+        "node": ">=20.17.0"
+    },
+    "type": "module",
+    "author": "Rafal Wiecek <contact@darkgl.com> (https://x.com/darkgl_)",
+    "license": "MIT",
     "dependencies": {
-        "axios": "^1.4.0",
-        "crypto-js": "^4.1.1"
+        "@types/node": "^22.5.5",
+        "axios": "^1.7.7",
+        "crypto-js": "^4.2.0"
     },
     "devDependencies": {
-        "@types/crypto-js": "^4.1.1"
+        "@types/crypto-js": "^4.2.2",
+        "@arethetypeswrong/cli": "^0.16.2",
+        "@biomejs/biome": "1.9.0",
+        "@changesets/cli": "^2.27.8",
+        "husky": "^9.1.6",
+        "typescript": "^5.6.2"
     }
 }

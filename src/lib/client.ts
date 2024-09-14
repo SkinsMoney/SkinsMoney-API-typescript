@@ -1,13 +1,13 @@
-import axios, {AxiosInstance, Method} from "axios";
-import {ClientResponse} from "../models/client.model";
-import {ValidationErrors, ValidationException} from "../exceptions/validation.exception";
+import axios, { type AxiosInstance, type Method } from 'axios';
+import type { ClientResponse } from '../models/client.model.js';
+import { type ValidationErrors, ValidationException } from '../exceptions/validation.exception.js';
 
 export class Client {
-    private _baseUrl: string = "https://api.skinsmoney.gg/v1/";
+    private _baseUrl = 'https://api.skinsmoney.gg/v1/';
     private _axios: AxiosInstance;
-    private _errorCode: number;
-    private _errorMessage: string;
-    private _statusCode: number;
+    private _errorCode: number | undefined;
+    private _errorMessage: string | undefined;
+    private _statusCode: number | undefined;
 
     constructor(url?: string) {
         if (url) {
@@ -18,18 +18,22 @@ export class Client {
             baseURL: this._baseUrl,
             validateStatus: () => true,
             headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            }
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
         });
     }
 
-    async request<T>(url: string, method: Method = "GET", data?: any): Promise<ClientResponse<T> | false> {
+    async request<T>(
+        url: string,
+        method: Method = 'GET',
+        data?: any,
+    ): Promise<ClientResponse<T> | false> {
         try {
             const response = await this._axios.request<T>({
                 url,
                 method,
-                data
+                data,
             });
 
             if (response.status === 422) {
@@ -47,15 +51,15 @@ export class Client {
         }
     }
 
-    errorCode(): number {
+    errorCode() {
         return this._errorCode;
     }
 
-    error(): string {
+    error() {
         return this._errorMessage;
     }
 
-    statusCode(): number {
+    statusCode() {
         return this._statusCode;
     }
 }

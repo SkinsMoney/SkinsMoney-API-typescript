@@ -1,12 +1,12 @@
-import {Exception} from "./exception";
+import { Exception } from './exception.js';
 
-export type ValidationErrors = {[key: string]: string[]};
+export type ValidationErrors = { [key: string]: string[] };
 
 export class ValidationException extends Exception {
     private _errors: ValidationErrors = {};
 
     constructor(errors: ValidationErrors) {
-        super("Validation error", 422);
+        super('Validation error', 422);
         this._errors = errors;
     }
 

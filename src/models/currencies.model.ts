@@ -3,4 +3,4 @@ export type Currency = {
     short_name: string;
     code: string;
     updated_at: Date;
-}
+};

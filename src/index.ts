@@ -1,6 +1,6 @@
-import {Currencies} from "./currencies";
-import {Client} from "./lib/client";
-import {Service} from "./service";
+import { Currencies } from './currencies.js';
+import { Client } from './lib/client.js';
+import { Service } from './service.js';
 
 class SkinsMoney {
     private _client: Client;
@@ -19,6 +19,6 @@ class SkinsMoney {
 }
 
 export default SkinsMoney;
-export {ValidationException} from "./exceptions/validation.exception";
-export {DepositException} from "./exceptions/deposit.exception";
-export {SkinsMoneyException} from "./exceptions/skinsmoney.exception";
+export { ValidationException } from './exceptions/validation.exception.js';
+export { DepositException } from './exceptions/deposit.exception.js';
+export { SkinsMoneyException } from './exceptions/skinsmoney.exception.js';
