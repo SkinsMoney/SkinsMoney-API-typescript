@@ -51,8 +51,8 @@
     },
     "devDependencies": {
         "@types/crypto-js": "^4.2.2",
-        "@arethetypeswrong/cli": "^0.16.2",
-        "@biomejs/biome": "1.9.0",
+        "@arethetypeswrong/cli": "^0.16.4",
+        "@biomejs/biome": "1.9.2",
         "@changesets/cli": "^2.27.8",
         "husky": "^9.1.6",
         "typescript": "^5.6.2"
