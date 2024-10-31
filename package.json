@@ -45,14 +45,14 @@
     "author": "Rafal Wiecek <contact@darkgl.com> (https://x.com/darkgl_)",
     "license": "MIT",
     "dependencies": {
-        "@types/node": "^22.7.5",
+        "@types/node": "^22.8.5",
         "axios": "^1.7.7",
         "crypto-js": "^4.2.0"
     },
     "devDependencies": {
         "@types/crypto-js": "^4.2.2",
         "@arethetypeswrong/cli": "^0.16.4",
-        "@biomejs/biome": "1.9.3",
+        "@biomejs/biome": "1.9.4",
         "@changesets/cli": "^2.27.9",
         "husky": "^9.1.6",
         "typescript": "^5.6.3"
